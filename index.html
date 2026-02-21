@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doni's Pizza – Frontera Comalapa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">
+        <img src="logo.jpeg" alt="Doni's Pizza" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li>
+          <a href="#menu" class="nav-cta">¡Pedir ahora!</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== BANNER DELIVERY ===== -->
+  <div class="delivery-banner">
+    <span class="delivery-text">
+      🛵 <strong>¡NUEVO!</strong> Servicio a domicilio en todo Frontera Comalapa por solo <strong>$15 pesitos</strong> 🍕
+    </span>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-sub">Bienvenido a</p>
+        <img src="logo.jpeg" alt="Doni's Pizza" class="hero-logo" />
+        <p class="hero-desc">
+          Las pizzas más deliciosas de Frontera Comalapa. <br />
+          Ingredientes frescos, sabor inigualable.
+        </p>
+        <div class="hero-btns">
+          <a href="#menu" class="btn btn-red">Ver menú</a>
+          <a href="#contacto" class="btn btn-outline">Contáctanos</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="donis.png" alt="Doni's Pizza mascota" />
+      </div>
+    </div>
+    <!-- Mascota decorativa esquina inferior izquierda -->
+    <div class="hero-mascota-corner">
+      <img src="mascota.png" alt="Mascota Doni's Pizza" />
+    </div>
+
+    <a href="#menu" class="scroll-down" aria-label="Ir al menú">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ===== PROMO STRIP ===== -->
+  <div class="promo-strip">
+    <div class="promo-track">
+      <span>🍕 Pizza Artesanal</span>
+      <span>🔥 Hechas al momento</span>
+      <span>🛵 Domicilio $15</span>
+      <span>📍 Frontera Comalapa</span>
+      <span>✅ Ingredientes frescos</span>
+      <span>💳 Efectivo y transferencia</span>
+      <span>🍕 Pizza Artesanal</span>
+      <span>🔥 Hechas al momento</span>
+      <span>🛵 Domicilio $15</span>
+      <span>📍 Frontera Comalapa</span>
+      <span>✅ Ingredientes frescos</span>
+      <span>💳 Efectivo y transferencia</span>
+    </div>
+  </div>
+
+  <!-- ===== MASCOTA CALLOUT ===== -->
+  <div class="mascota-callout">
+    <div class="mascota-callout-inner container">
+      <img src="mascota.png" alt="Mascota Doni's Pizza" class="callout-mascota" />
+      <div class="callout-bubble">
+        <p>¡Hola! Soy la mascota de <strong>Doni’s Pizza</strong>.<br />
+        Aquí encontrarás las pizzas más deliciosas<br class="hide-mobile" /> de Frontera Comalapa. 🍕</p>
+        <a href="#menu" class="btn btn-red" style="margin-top:0.75rem;font-size:0.85rem;padding:0.55rem 1.3rem;">¡Ver pizzas!</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MENÚ ===== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nuestro menú</span>
+        <h2 class="section-title">Elige tu pizza favorita</h2>
+        <p class="section-desc">Todas nuestras pizzas se preparan con masa fresca, queso mozzarella y los mejores ingredientes.</p>
+      </div>
+
+      <!-- SIZE TABS -->
+      <div class="size-tabs">
+        <button class="size-tab active" data-size="12">🍕 12 Rebanadas – $190</button>
+        <button class="size-tab" data-size="24">🍕 24 Rebanadas – $350</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- PIZZA 1 -->
+        <div class="pizza-card" data-name="Pepperoni" data-price-12="190" data-price-24="350">
+          <div class="card-img-wrap">
+            <img src="pizza.png" alt="Pizza Pepperoni" />
+            <span class="card-badge badge-red">⭐ Popular</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Pepperoni</h3>
+            <p class="card-desc">Generosa capa de pepperoni sobre salsa de tomate y queso mozzarella gratinado.</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-red btn-order"
+                onclick="openOrderModal('Pepperoni')">
+                Hacer pedido 🛵
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 2 -->
+        <div class="pizza-card" data-name="Mexicana" data-price-12="190" data-price-24="350">
+          <div class="card-img-wrap">
+            <img src="pizza.png" alt="Pizza Mexicana" />
+            <span class="card-badge badge-blue">🌶️ Picante</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Mexicana</h3>
+            <p class="card-desc">Chorizo, jalapeños, chiles y queso con un toque picante irresistible.</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-red btn-order"
+                onclick="openOrderModal('Mexicana')">
+                Hacer pedido 🛵
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 3 -->
+        <div class="pizza-card" data-name="Ala Diabla" data-price-12="190" data-price-24="350">
+          <div class="card-img-wrap">
+            <img src="pizza.png" alt="Pizza Ala Diabla" />
+            <span class="card-badge badge-red">🔥 Picante</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Ala Diabla</h3>
+            <p class="card-desc">Explosión de sabor picante con chiles, salsa especial y queso mozzarella fundido.</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-red btn-order"
+                onclick="openOrderModal('Ala Diabla')">
+                Hacer pedido 🛵
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 4 -->
+        <div class="pizza-card" data-name="Choriqueso" data-price-12="190" data-price-24="350">
+          <div class="card-img-wrap">
+            <img src="pizza.png" alt="Pizza Choriqueso" />
+            <span class="card-badge badge-blue">🧀 Especial</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Choriqueso</h3>
+            <p class="card-desc">Chorizo jugoso con doble queso mozzarella y salsa de la casa. ¡Irresistible!</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-red btn-order"
+                onclick="openOrderModal('Choriqueso')">
+                Hacer pedido 🛵
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 5 -->
+        <div class="pizza-card" data-name="Hawaiana" data-price-12="190" data-price-24="350">
+          <div class="card-img-wrap">
+            <img src="pizza.png" alt="Pizza Hawaiana" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Hawaiana</h3>
+            <p class="card-desc">La perfecta combinación de jamón y piña sobre salsa de tomate y queso fundido.</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-red btn-order"
+                onclick="openOrderModal('Hawaiana')">
+                Hacer pedido 🛵
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 6 -->
+        <div class="pizza-card" data-name="Champiñones" data-price-12="190" data-price-24="350">
+          <div class="card-img-wrap">
+            <img src="pizza.png" alt="Pizza Champiñones" />
+            <span class="card-badge badge-blue">🍄 Vegetariana</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Champiñones</h3>
+            <p class="card-desc">Champiñones frescos, queso mozzarella y salsa de tomate. Suave y deliciosa.</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-red btn-order"
+                onclick="openOrderModal('Champiñones')">
+                Hacer pedido 🛵
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /menu-grid -->
+
+      <!-- NOTE -->
+      <p class="menu-note">
+        * Precios en pesos mexicanos. Puede haber variaciones. Envío a domicilio <strong>+$15</strong> en todo Frontera Comalapa.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="about-section" id="nosotros">
+    <div class="container about-grid">
+      <div class="about-img-wrap">
+        <img src="donis.png" alt="Doni's Pizza chef" class="about-img" />
+        <div class="about-badge">
+          <span class="badge-num">+1</span>
+          <span class="badge-label">año<br/>de sabor</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">Nuestra historia</span>
+        <h2 class="section-title">Pasión por la pizza artesanal</h2>
+        <p>
+          En <strong>Doni's Pizza</strong> creemos que una buena pizza comienza con ingredientes de calidad y mucho amor. 
+          Somos una empresa familiar orgullosamente de Frontera Comalapa, Chiapas, y desde que abrimos nuestras puertas
+          no hemos parado de deleitar a nuestros clientes con sabores únicos.
+        </p>
+        <p>
+          Cada pizza es elaborada al momento con masa fresca, salsa de tomate casera y queso 
+          mozzarella de primera calidad. Nuestro compromiso es brindarte la mejor experiencia 
+          pizzera del municipio.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num" style="color: var(--red);">100%</span>
+            <span class="stat-label">Ingredientes frescos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" style="color: var(--blue);">6+</span>
+            <span class="stat-label">Sabores disponibles</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" style="color: var(--red);">⭐5</span>
+            <span class="stat-label">Calificación clientes</span>
+          </div>
+        </div>
+        <a href="#menu" class="btn btn-red" style="margin-top:0.5rem;">Ver menú completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Encuéntranos</span>
+        <h2 class="section-title">Contacto y ubicación</h2>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <span class="contact-icon">📍</span>
+          <h4>Ubicación</h4>
+          <p>Central de Abastos, a un lado de Coppel<br /><strong>Frontera Comalapa, Chiapas</strong></p>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">🕐</span>
+          <h4>Horario</h4>
+          <p>Lunes a Domingo<br /><strong>12:00 pm – 10:00 pm</strong></p>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">📱</span>
+          <h4>WhatsApp</h4>
+          <p>Escríbenos para hacer tu pedido de forma rápida y sencilla.</p>
+          <a href="https://wa.me/529631403622?text=%C2%A1Hola%20Doni%C2%B4s%20Pizza!%20Quisiera%20informaci%C3%B3n%20sobre%20su%20men%C3%BA."
+             target="_blank" class="btn btn-blue" style="margin-top:0.75rem;">
+            Chatear ahora
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">🛵</span>
+          <h4>Domicilio</h4>
+          <p>Servicio a domicilio en todo Frontera Comalapa por solo <strong style="color:var(--red);">$15</strong>.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="logo.jpeg" alt="Doni's Pizza" class="footer-logo" />
+      <p class="footer-copy">© 2026 Doni's Pizza – Frontera Comalapa, Chiapas. Todos los derechos reservados.</p>
+      <p class="footer-tagline">Hecho con ❤️ y mucho queso 🧀</p>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL PEDIDO ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" onclick="closeOrderModal()" aria-label="Cerrar">✕</button>
+
+      <div class="modal-header">
+        <img src="logo.jpeg" alt="Doni's Pizza" class="modal-logo" />
+        <h3 id="modalTitle">Hacer pedido</h3>
+        <p id="modalPizzaName" class="modal-pizza-name"></p>
+      </div>
+
+      <div class="modal-body">
+        <!-- Tamaño -->
+        <label class="modal-label">Tamaño de pizza</label>
+        <div class="modal-size-group">
+          <label class="radio-option">
+            <input type="radio" name="modalSize" value="12" id="radio12" checked onchange="updateModalPrice()" />
+            <span class="radio-custom"></span>
+            <span class="radio-text">12 Rebanadas – <strong id="modalPrice12"></strong></span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="modalSize" value="24" id="radio24" onchange="updateModalPrice()" />
+            <span class="radio-custom"></span>
+            <span class="radio-text">24 Rebanadas – <strong id="modalPrice24"></strong></span>
+          </label>
+        </div>
+
+        <!-- Tipo entrega -->
+        <label class="modal-label" style="margin-top:1.25rem;">Tipo de entrega</label>
+        <div class="modal-size-group">
+          <label class="radio-option">
+            <input type="radio" name="modalDelivery" value="domicilio" id="radioDom" checked onchange="updateModalPrice()" />
+            <span class="radio-custom"></span>
+            <span class="radio-text">🛵 Envío a domicilio (+$15)</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="modalDelivery" value="recoger" id="radioRecoger" onchange="updateModalPrice()" />
+            <span class="radio-custom"></span>
+            <span class="radio-text">🏠 Recoger en local (sin costo)</span>
+          </label>
+        </div>
+
+        <!-- Total -->
+        <div class="modal-total-bar">
+          <span>Total estimado:</span>
+          <span class="modal-total-price" id="modalTotalPrice">$130</span>
+        </div>
+
+        <!-- Dirección (solo domicilio) -->
+        <div id="addressGroup">
+          <label class="modal-label" style="margin-top:1.25rem;">Tu dirección</label>
+          <input
+            type="text"
+            id="addressInput"
+            class="modal-input"
+            placeholder="Ej: Calle Hidalgo #24, Col. Centro"
+          />
+        </div>
+
+        <!-- Notas -->
+        <label class="modal-label" style="margin-top:1.25rem;">Notas extra (opcional)</label>
+        <input
+          type="text"
+          id="notesInput"
+          class="modal-input"
+          placeholder="Ej: Sin picante, doble queso..."
+        />
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-red btn-full" onclick="sendWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px;">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Enviar pedido por WhatsApp
+        </button>
+        <button class="btn btn-outline btn-full" onclick="closeOrderModal()" style="margin-top:0.5rem;">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WHATSAPP FAB ===== -->
+  <a href="https://wa.me/529631403622?text=%C2%A1Hola%20Doni%C2%B4s%20Pizza!%20Quisiera%20hacer%20un%20pedido."
+     target="_blank" class="whatsapp-fab" aria-label="Contactar por WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+================================================================
+  DONI'S PIZZA – EXPLICACIÓN DEL SISTEMA DE PEDIDOS (MODAL)
+================================================================
+
+¿QUÉ ES EL MODAL DE PEDIDO?
+-----------------------------
+Es una ventana emergente que aparece cuando el cliente hace clic
+en el botón "Hacer pedido 🛵" de cualquier pizza del menú.
+No lleva al cliente a otra página, sino que se abre encima de la
+página actual sin perder el lugar donde estaba.
+
+
+================================================================
+  ¿CÓMO FUNCIONA PASO A PASO?
+================================================================
+
+1. EL CLIENTE HACE CLIC EN "Hacer pedido 🛵"
+   - Cada tarjeta de pizza tiene su propio botón.
+   - Al hacer clic, el modal se abre automáticamente mostrando
+     el nombre de la pizza que eligió (ej: "Pizza Mexicana").
+
+2. ELIGE EL TAMAÑO
+   - Tiene dos opciones de radio (solo puede elegir una):
+       • 12 Rebanadas – $190
+       • 24 Rebanadas – $350
+   - El precio total se actualiza en tiempo real abajo.
+
+3. ELIGE EL TIPO DE ENTREGA
+   - Dos opciones:
+       • 🛵 Envío a domicilio (+$15)
+       • 🏠 Recoger en local (sin costo)
+   - Si elige domicilio, aparece un campo para ingresar la dirección.
+   - Si elige recoger, ese campo se oculta automáticamente.
+
+4. VE EL TOTAL ESTIMADO
+   - Una barra muestra el total calculado al momento:
+       Ejemplo: Pizza 12 rebanas ($190) + domicilio ($15) = $205
+   - El número cambia cada vez que el cliente modifica una opción.
+
+5. INGRESA SU DIRECCIÓN (si eligió domicilio)
+   - Campo de texto con placeholder:
+     "Ej: Calle Hidalgo #24, Col. Centro"
+   - Si intenta enviar el pedido sin llenar la dirección,
+     el campo se marca en rojo y muestra una alerta.
+
+6. NOTAS EXTRA (opcional)
+   - Campo de texto libre para indicar personalizaciones:
+     "Sin picante", "doble queso", "sin cebolla", etc.
+
+7. HACE CLIC EN "Enviar pedido por WhatsApp"
+   - El sistema arma un mensaje AUTOMÁTICO con toda la info
+     y abre WhatsApp directamente en el número de Doni's Pizza.
+
+
+================================================================
+  MENSAJE QUE SE GENERA AUTOMÁTICAMENTE EN WHATSAPP
+================================================================
+
+--- EJEMPLO CON DOMICILIO ---
+¡Hola Doni's Pizza! 🍕 Quiero pedir una pizza *Mexicana* de
+*12 rebanadas* ($190) con envío a domicilio (+$15).
+
+📍 *Mi dirección es:* Calle Benito Juárez #12, Col. Centro
+💰 *Total:* $205
+
+📝 *Notas:* Sin jalapeños
+
+-------------------------------------------------
+
+--- EJEMPLO PARA RECOGER EN LOCAL ---
+¡Hola Doni's Pizza! 🍕 Quiero pedir una pizza *Pepperoni* de
+*24 rebanadas* ($350) para *recoger en el local*.
+
+💰 *Total:* $350
+
+
+================================================================
+  NÚMERO DE WHATSAPP CONFIGURADO
+================================================================
+
+  Número: 963 140 36 22
+  Formato internacional: +52 963 140 36 22
+
+  Este número está configurado en 3 lugares del código:
+    1. El botón "Enviar pedido por WhatsApp" del modal.
+    2. El botón flotante verde (abajo a la derecha).
+    3. El botón "Chatear ahora" en la sección de Contacto.
+
+  Si el número cambia, solo hay que editarlo en el archivo
+  script.js en la línea:
+      const WA_NUMBER = "529631403622";
+
+
+================================================================
+  PIZZAS Y PRECIOS CONFIGURADOS
+================================================================
+
+  Sabor           | 12 Rebanadas | 24 Rebanadas
+  ----------------+--------------+--------------
+  Pepperoni       |    $190      |    $350
+  Mexicana        |    $190      |    $350
+  Ala Diabla      |    $190      |    $350
+  Choriqueso      |    $190      |    $350
+  Hawaiana        |    $190      |    $350
+  Champiñones     |    $190      |    $350
+
+  Envío a domicilio: +$15 en todo Frontera Comalapa
+
+
+================================================================
+  CÓMO CERRAR EL MODAL (3 MANERAS)
+================================================================
+
+  1. Clic en la X (esquina superior derecha del modal).
+  2. Clic fuera del modal (en la pantalla oscura de fondo).
+  3. Presionar la tecla ESC del teclado.
+
+
+================================================================
+  PARA AGREGAR UNA PIZZA NUEVA AL MENÚ
+================================================================
+
+  Paso 1 – En index.html:
+    Copiar un bloque <div class="pizza-card"> existente,
+    cambiar el nombre, descripción y los atributos:
+      data-name="NombrePizza"
+      data-price-12="190"
+      data-price-24="350"
+    También cambiar el onclick:
+      onclick="openOrderModal('NombrePizza')"
+
+  Paso 2 – En script.js, añadir la pizza al objeto menuPizzas:
+      "NombrePizza": { price12: 190, price24: 350 },
+
+  ¡Listo! El modal funcionará automáticamente con la nueva pizza.
+
+
+================================================================
+  ARCHIVOS RELACIONADOS
+================================================================
+
+  index.html  → Estructura visual del modal (HTML)
+  styles.css  → Diseño y colores del modal (CSS)
+  script.js   → Toda la lógica: abrir, cerrar, calcular
+                precio, armar mensaje y abrir WhatsApp (JS)
+
+================================================================
