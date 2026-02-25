@@ -31,8 +31,6 @@ const TOPPINGS = [
   { emoji: "🌭", label: "Salchicha a la diabla",  price: 15 },
   { emoji: "🧀", label: "Extra queso",            price: 50 },
   { emoji: "🥩", label: "Carne molida",           price: 40 },
-  { emoji: "🥣", label: "Aderezo (bolsita)",      price: 15 },
-  { emoji: "🍅", label: "Catsup (bolsita)",       price: 15 },
 ];
 
 /* ---- ESTADO ----------------------------------------------- */
@@ -207,6 +205,18 @@ function getSelectedToppings() {
     .map(c => ({ label: c.dataset.label, price: parseInt(c.dataset.price) }));
 }
 
+/* ---- Helper: calcular costo de toppings con regla gratis ---------- */
+// halfhalf24: primeros 4 ingredientes (sin contar Extra queso) son GRATIS
+function calcToppingsCost(toppings, isHalfHalf24) {
+  if (!isHalfHalf24) return toppings.reduce((s, t) => s + t.price, 0);
+  // Extra queso siempre se cobra
+  const quesoExtra  = toppings.filter(t => t.label === "Extra queso");
+  const regulares   = toppings.filter(t => t.label !== "Extra queso");
+  const paidReg     = regulares.slice(4); // los primeros 4 son gratis
+  return quesoExtra.reduce((s, t) => s + t.price, 0) +
+         paidReg.reduce((s, t) => s + t.price, 0);
+}
+
 /* ---- Subtotal del modal ----------------------------------- */
 function updateModalSubtotal() {
   const sizeEl = document.querySelector('input[name="modalSize"]:checked');
@@ -224,7 +234,13 @@ function updateModalSubtotal() {
     basePrice  = size === "12" ? data.price12 : data.price24;
   }
 
-  const toppingsTotal = getSelectedToppings().reduce((s, t) => s + t.price, 0);
+  const toppings      = getSelectedToppings();
+  const isHalfHalf24  = (modalMode === "halfhalf" && size === "24");
+  const toppingsTotal = calcToppingsCost(toppings, isHalfHalf24);
+
+  // Nota informativa para mitad y mitad 24 reb
+  const note = document.getElementById("halfHalfToppingsNote");
+  if (note) note.style.display = isHalfHalf24 ? "block" : "none";
 
   // Promo martes: mostrar solo si es martes y tamaño 24
   const isTuesday  = new Date().getDay() === 2;
@@ -262,7 +278,8 @@ function addToCart() {
   const sizeEl   = document.querySelector('input[name="modalSize"]:checked');
   const size     = sizeEl ? sizeEl.value : "12";
   const toppings = getSelectedToppings();
-  const topCost  = toppings.reduce((s, t) => s + t.price, 0);
+  const isHalfHalf24 = (modalMode === "halfhalf" && size === "24");
+  const topCost  = calcToppingsCost(toppings, isHalfHalf24);
   const topLabel = toppings.map(t => t.label);
 
   let name, price, key;
@@ -311,13 +328,15 @@ function addToCart() {
 }
 
 /* ---- Agregar refresco directo ----------------------------- */
-function addDrinkToCart(drinkName, drinkPrice) {
-  const key = `drink__${drinkName}`;
+function addDrinkToCart(drinkName, drinkPrice, brandSelectId) {
+  const brand    = brandSelectId ? (document.getElementById(brandSelectId)?.value || "") : "";
+  const fullName = brand ? `${drinkName} (${brand})` : drinkName;
+  const key      = `drink__${fullName}`;
   const existing = cart.find(i => i.key === key);
   if (existing) {
     existing.qty = Math.min(20, existing.qty + 1);
   } else {
-    cart.push({ key, type: "drink", name: drinkName, size: "", price: drinkPrice, toppings: [], qty: 1 });
+    cart.push({ key, type: "drink", name: fullName, size: "", price: drinkPrice, toppings: [], qty: 1 });
   }
   updateCartBadge();
   const fab = document.getElementById("fabCart");

@@ -264,13 +264,23 @@ ul { list-style: none; }
   overflow: hidden;
   padding: 5rem 1.5rem 4rem;
 }
+/* Pizza de fondo del hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('Imgs/pizza-plano-epico.jpeg') center / cover no-repeat;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 70% at 70% 50%, rgba(232,35,26,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 60% at 20% 80%, rgba(30,155,215,0.07) 0%, transparent 60%),
-    linear-gradient(160deg, #0f0f0f 0%, #161616 100%);
+    radial-gradient(ellipse 70% 70% at 70% 50%, rgba(232,35,26,0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 60% at 20% 80%, rgba(30,155,215,0.08) 0%, transparent 60%),
+    linear-gradient(160deg, rgba(15,15,15,0.93) 0%, rgba(22,22,22,0.93) 100%);
   z-index: 0;
 }
 .hero-content {
@@ -520,6 +530,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 0.4s ease;
 }
 .pizza-card:hover .card-img-wrap img { transform: scale(1.06); }
@@ -1215,7 +1226,7 @@ ul { list-style: none; }
 .img-banner-strip {
   position: relative;
   width: 100%;
-  max-height: 240px;
+  max-height: 300px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1223,25 +1234,28 @@ ul { list-style: none; }
 }
 .img-banner-strip img {
   width: 100%;
-  height: 240px;
+  height: 300px;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   display: block;
 }
 .img-banner-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.52);
+  background: rgba(0,0,0,0.22);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .img-banner-overlay p {
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: #fff;
   text-align: center;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+  text-shadow: 0 3px 18px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.45);
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
 }
 
 /* ============================================================
@@ -1272,6 +1286,18 @@ ul { list-style: none; }
   color: #fff;
 }
 
+/* Nota toppings gratis – Mitad y Mitad 24 reb */
+.halfhalf-note {
+  font-size: 0.8rem;
+  color: var(--blue);
+  background: rgba(30,155,215,0.08);
+  border: 1px solid rgba(30,155,215,0.25);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
 /* ============================================================
    DRINK RECOMMENDATION dentro del carrito
    ============================================================ */
@@ -1291,15 +1317,37 @@ ul { list-style: none; }
 .drink-rec-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
 
 /* ============================================================
+   SELECT DE MARCA EN REFRESCOS
+   ============================================================ */
+.drink-select {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font);
+  font-size: 0.82rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition);
+}
+.drink-select:focus {
+  border-color: var(--blue);
+}
+
+/* ============================================================
    HERO – imagen pizza reemplaza al chef
    ============================================================ */
 .hero-pizza-img {
   width: 100%;
-  max-width: 460px;
-  border-radius: 24px;
-  object-fit: cover;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  max-width: 430px;
+  border-radius: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 48px rgba(0,0,0,0.65)) drop-shadow(0 4px 20px rgba(232,35,26,0.18));
   animation: floatImg 4s ease-in-out infinite;
+  background: transparent;
 }
 @keyframes floatImg {
   0%, 100% { transform: translateY(0); }

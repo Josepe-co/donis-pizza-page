@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doni's Pizza – Frontera Comalapa</title>
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="hero-img">
-        <img src="Imgs/pizza-plano-epico.jpeg" alt="Pizza Doni's Pizza" class="hero-pizza-img" />
+        <img src="donis.png" alt="Doni's Pizza" class="hero-pizza-img" />
       </div>
     </div>
     <!-- Mascota decorativa esquina inferior izquierda -->
@@ -295,11 +295,16 @@
           <span class="drink-icon">🥤</span>
           <div class="drink-info">
             <h4>Refresco 2 Litros</h4>
-            <p>7up · Pepsi · Manzanita · Fanta naranja</p>
+            <select id="drinkBrand2L" class="drink-select">
+              <option value="7up">7up</option>
+              <option value="Pepsi">Pepsi</option>
+              <option value="Manzanita">Manzanita</option>
+              <option value="Fanta naranja">Fanta naranja</option>
+            </select>
           </div>
           <div class="drink-actions">
             <span class="drink-price">$40</span>
-            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco 2L', 40)">+ Carrito</button>
+            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco 2L', 40, 'drinkBrand2L')">+ Carrito</button>
           </div>
         </div>
 
@@ -307,11 +312,16 @@
           <span class="drink-icon">🫙</span>
           <div class="drink-info">
             <h4>Refresco de Vidrio</h4>
-            <p>7up · Pepsi · Manzanita · Fanta naranja</p>
+            <select id="drinkBrandVidrio" class="drink-select">
+              <option value="7up">7up</option>
+              <option value="Pepsi">Pepsi</option>
+              <option value="Manzanita">Manzanita</option>
+              <option value="Fanta naranja">Fanta naranja</option>
+            </select>
           </div>
           <div class="drink-actions">
             <span class="drink-price">$30</span>
-            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco vidrio', 30)">+ Carrito</button>
+            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco vidrio', 30, 'drinkBrandVidrio')">+ Carrito</button>
           </div>
         </div>
 
@@ -319,11 +329,16 @@
           <span class="drink-icon">🍶</span>
           <div class="drink-info">
             <h4>Refresco 600 ml</h4>
-            <p>7up · Pepsi · Manzanita · Fanta naranja</p>
+            <select id="drinkBrand600" class="drink-select">
+              <option value="7up">7up</option>
+              <option value="Pepsi">Pepsi</option>
+              <option value="Manzanita">Manzanita</option>
+              <option value="Fanta naranja">Fanta naranja</option>
+            </select>
           </div>
           <div class="drink-actions">
             <span class="drink-price">$25</span>
-            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco 600ml', 25)">+ Carrito</button>
+            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco 600ml', 25, 'drinkBrand600')">+ Carrito</button>
           </div>
         </div>
 
@@ -485,6 +500,10 @@
           Ingredientes extra
           <span class="modal-label-hint">(opcional · puedes elegir varios)</span>
         </label>
+        <!-- Nota toppings gratis en Mitad y Mitad 24 reb -->
+        <p id="halfHalfToppingsNote" class="halfhalf-note" style="display:none;">
+          🎁 <strong>Pizza 24 reb:</strong> los primeros 4 ingredientes son gratis. Extra queso siempre tiene costo.
+        </p>
         <div class="toppings-grid" id="toppingsGrid"></div>
 
         <!-- Cantidad -->
@@ -594,6 +613,6 @@
     </svg>
   </a>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
