@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doni's Pizza – Frontera Comalapa</title>
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -446,9 +446,9 @@
   </footer>
 
   <!-- ===== MODAL PRODUCTO ===== -->
-  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event, 'modalOverlay')">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" onclick="closeOrderModal()" aria-label="Cerrar">✕</button>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close" onclick="closeOrderModal()" aria-label="Cerrar">✕</button>
 
       <div class="modal-header">
         <img src="logo.jpeg" alt="Doni's Pizza" class="modal-logo" />
@@ -460,8 +460,8 @@
 
         <!-- Modo Normal / Mitad y Mitad -->
         <div class="mode-tabs">
-          <button class="mode-tab active" id="modeNormal" onclick="setModalMode('normal')">🍕 Normal</button>
-          <button class="mode-tab" id="modeHalf"   onclick="setModalMode('halfhalf')">🍕🍕 Mitad y Mitad</button>
+          <button type="button" class="mode-tab active" id="modeNormal" onclick="setModalMode('normal')">🍕 Normal</button>
+          <button type="button" class="mode-tab" id="modeHalf" onclick="setModalMode('halfhalf')">🍕🍕 Mitad y Mitad</button>
         </div>
 
         <!-- Selector Mitad y Mitad -->
@@ -530,16 +530,16 @@
       </div>
 
       <div class="modal-footer">
-        <button class="btn btn-red btn-full" onclick="addToCart()">🛒 Agregar al carrito</button>
-        <button class="btn btn-outline btn-full" onclick="closeOrderModal()" style="margin-top:0.5rem;">Cancelar</button>
+        <button type="button" class="btn btn-red btn-full" onclick="addToCart()">🛒 Agregar al carrito</button>
+        <button type="button" class="btn btn-outline btn-full" onclick="closeOrderModal()" style="margin-top:0.5rem;">Cancelar</button>
       </div>
     </div>
   </div>
 
   <!-- ===== MODAL CARRITO ===== -->
-  <div class="modal-overlay" id="cartOverlay" onclick="closeModalOutside(event, 'cartOverlay')">
-    <div class="modal modal-cart" role="dialog" aria-modal="true">
-      <button class="modal-close" onclick="closeCartModal()" aria-label="Cerrar">✕</button>
+  <div class="modal-overlay" id="cartOverlay">
+    <div class="modal modal-cart" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close" onclick="closeCartModal()" aria-label="Cerrar">✕</button>
 
       <div class="modal-header">
         <img src="logo.jpeg" alt="Doni's Pizza" class="modal-logo" />
@@ -620,6 +620,6 @@
     </svg>
   </a>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>

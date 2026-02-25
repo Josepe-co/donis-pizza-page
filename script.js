@@ -354,9 +354,41 @@ function addDrinkToCart(drinkName, drinkPrice, brandSelectId) {
 
 /* ---- Abrir modal directo en modo mitad y mitad ------------ */
 function openHalfHalfModal() {
-  // Abre modal con la primera pizza como contexto, luego cambia a modo halfhalf
-  openOrderModal("Pepperoni");
-  setModalMode("halfhalf");
+  const data = pizzaData["Pepperoni"];
+  currentPizza = "Pepperoni";
+  currentQty   = 1;
+  modalMode    = "halfhalf";
+
+  // Activar tab mitad y mitad
+  document.getElementById("modeNormal")?.classList.remove("active");
+  document.getElementById("modeHalf")?.classList.add("active");
+
+  // Poblar y mostrar section
+  populateHalfSelects();
+  const hhSection = document.getElementById("halfHalfSection");
+  if (hhSection) hhSection.style.display = "block";
+
+  // Configurar radio sizes
+  const radio24     = document.getElementById("radio24");
+  const radio24wrap = radio24?.closest("label");
+  if (radio24wrap) { radio24wrap.style.opacity = ""; radio24wrap.style.pointerEvents = ""; }
+  if (currentTabSize === 24) {
+    radio24.checked = true;
+  } else {
+    document.getElementById("radio12").checked = true;
+  }
+
+  document.getElementById("modalPrice12").textContent = `$${data.price12}`;
+  document.getElementById("modalPrice24").textContent = `$${data.price24}`;
+  document.getElementById("modalPizzaName").textContent = "Pizza Mitad y Mitad";
+  document.getElementById("qtyDisplay").textContent   = "1";
+
+  renderToppings();
+  updateHalfSelectsVisibility();
+  updateModalSubtotal();
+
+  document.getElementById("modalOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
 /* ============================================================
@@ -542,11 +574,12 @@ function sendCartWhatsApp() {
 /* ============================================================
    CERRAR MODALES – overlay o ESC
    ============================================================ */
-function closeModalOutside(event, overlayId) {
-  if (event.target.id === overlayId) {
-    overlayId === "modalOverlay" ? closeOrderModal() : closeCartModal();
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Cerrar al hacer click en el fondo del overlay (no en el modal en sí)
+  document.getElementById("modalOverlay").addEventListener("click", () => closeOrderModal());
+  document.getElementById("cartOverlay").addEventListener("click", () => closeCartModal());
+});
+
 document.addEventListener("keydown", e => {
   if (e.key !== "Escape") return;
   closeOrderModal();
@@ -556,13 +589,6 @@ document.addEventListener("keydown", e => {
 /* ============================================================
    ANIMACIONES DE ENTRADA – Intersection Observer
    ============================================================ */
-const style = document.createElement("style");
-style.textContent = `
-  .fade-in { opacity:0; transform:translateY(24px); transition:opacity .55s ease,transform .55s ease; }
-  .fade-in.visible { opacity:1; transform:translateY(0); }
-`;
-document.head.appendChild(style);
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); }

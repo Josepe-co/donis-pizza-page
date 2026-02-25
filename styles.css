@@ -903,6 +903,17 @@ ul { list-style: none; }
 }
 .modal-input::placeholder { color: var(--gray); }
 .modal-input:focus { border-color: var(--blue); }
+/* Selects en modo oscuro (evita popup blanco del sistema) */
+select.modal-input,
+.drink-select {
+  color-scheme: dark;
+  cursor: pointer;
+}
+select.modal-input option,
+.drink-select option {
+  background: #1e1e1e;
+  color: #fff;
+}
 
 .modal-footer {
   padding: 0 1.75rem 1.75rem;
@@ -1440,4 +1451,18 @@ ul { list-style: none; }
   .contact-grid { grid-template-columns: 1fr; }
   .hero { padding: 6rem 1rem 3rem; }
   .about-stats { gap: 1.25rem; }
+}
+
+/* ============================================================
+   FADE-IN ANIMACION DE ENTRADA (Intersection Observer)
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  will-change: opacity, transform;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
