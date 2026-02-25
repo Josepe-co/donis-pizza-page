@@ -1108,6 +1108,217 @@ ul { list-style: none; }
 }
 
 /* ============================================================
+   BADGE GOLD / GRAY (nuevas pizzas)
+   ============================================================ */
+.badge-gold { background: linear-gradient(135deg,#f59e0b,#d97706); color:#fff; }
+.badge-gray { background: #444; color: rgba(255,255,255,0.6); }
+
+/* ============================================================
+   PIZZA CARD – variantes
+   ============================================================ */
+.pizza-card--coming { opacity: 0.65; pointer-events: none; }
+.pizza-card--coming .card-img-wrap img { filter: grayscale(60%); }
+.pizza-card--special .card-img-wrap { border-top: 3px solid #f59e0b; }
+.pizza-card--halfhalf .card-img-wrap { border-top: 3px solid var(--blue); }
+.only12 { font-size: 0.72rem; font-weight: 400; color: rgba(255,255,255,0.5); display: block; margin-top: 2px; }
+
+/* ============================================================
+   DRINKS GRID
+   ============================================================ */
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.drink-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.drink-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+.drink-icon { font-size: 2rem; flex-shrink: 0; }
+.drink-info { flex: 1; }
+.drink-info h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin: 0 0 2px; }
+.drink-info p  { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0; }
+.drink-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; }
+.drink-price { font-size: 1.05rem; font-weight: 800; color: var(--blue); }
+.btn-sm { font-size: 0.75rem; padding: 0.35rem 0.8rem; border-radius: 50px; }
+
+/* ============================================================
+   PROMO MARTES – sección
+   ============================================================ */
+.promo-martes-section {
+  display: flex;
+  background: linear-gradient(135deg, #1a0a0a, #2a0e0e);
+  border-top: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+  padding: 2rem 0;
+}
+.promo-martes-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.promo-martes-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid var(--red);
+  flex-shrink: 0;
+}
+.promo-martes-text h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0.3rem 0 0.5rem;
+}
+.promo-martes-text p { font-size: 0.9rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem; }
+.promo-martes-badge {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* Chip dentro del modal */
+.promo-martes-chip {
+  margin-top: 1rem;
+  background: rgba(232,35,26,0.1);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.promo-martes-chip label { cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
+.promo-martes-chip input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--red); }
+
+/* ============================================================
+   BANNER IMAGEN STRIP
+   ============================================================ */
+.img-banner-strip {
+  position: relative;
+  width: 100%;
+  max-height: 240px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-banner-strip img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.img-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.52);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-banner-overlay p {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+/* ============================================================
+   MODE TABS del modal (Normal / Mitad y Mitad)
+   ============================================================ */
+.mode-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg3);
+  border-radius: 10px;
+  padding: 4px;
+}
+.mode-tab {
+  flex: 1;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.mode-tab.active {
+  background: var(--red);
+  color: #fff;
+}
+
+/* ============================================================
+   DRINK RECOMMENDATION dentro del carrito
+   ============================================================ */
+.drink-recommendation {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(30,155,215,0.08);
+  border: 1px solid rgba(30,155,215,0.3);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+}
+.drink-recommendation > span { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.drink-rec-btns { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+
+/* ============================================================
+   HERO – imagen pizza reemplaza al chef
+   ============================================================ */
+.hero-pizza-img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: floatImg 4s ease-in-out infinite;
+}
+@keyframes floatImg {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ============================================================
+   CHIP PRECIO  (precio del topping dentro del chip)
+   ============================================================ */
+.chip-price {
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-left: 2px;
+}
+.topping-chip.selected .chip-price { color: #fff; }
+
+/* ============================================================
    WHATSAPP FAB
    ============================================================ */
 .whatsapp-fab {

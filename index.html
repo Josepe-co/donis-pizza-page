@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doni's Pizza – Frontera Comalapa</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -35,7 +35,7 @@
   <!-- ===== BANNER DELIVERY ===== -->
   <div class="delivery-banner">
     <span class="delivery-text">
-      🛵 <strong>¡NUEVO!</strong> Servicio a domicilio en todo Frontera Comalapa por solo <strong>$15 pesitos</strong> 🍕
+      🛵 <strong>¡NUEVO!</strong> Domicilio Centro/barrios <strong>$15</strong> · Anonal, La Lima y zonas lejanas <strong>$25</strong> 🍕
     </span>
   </div>
 
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="hero-img">
-        <img src="donis.png" alt="Doni's Pizza mascota" />
+        <img src="Imgs/pizza-plano-epico.jpeg" alt="Pizza Doni's Pizza" class="hero-pizza-img" />
       </div>
     </div>
     <!-- Mascota decorativa esquina inferior izquierda -->
@@ -89,6 +89,19 @@
     </div>
   </div>
 
+  <!-- ===== PROMO MARTES ===== -->
+  <div class="promo-martes-section" id="promoMartesSection" style="display:none;">
+    <div class="container promo-martes-inner">
+      <img src="Imgs/Promo-martes.png" alt="Promo Martes" class="promo-martes-img" />
+      <div class="promo-martes-text">
+        <span class="promo-martes-badge">🎉 Solo los Martes</span>
+        <h3>¡Pizza Familiar + Refresco 2L!</h3>
+        <p>Pide tu pizza de <strong>24 rebanadas</strong> y llévate un <strong>Refresco 2L</strong> por solo <strong>$10 extra</strong>.</p>
+        <a href="#menu" class="btn btn-red">Pedir ahora</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== MASCOTA CALLOUT ===== -->
   <div class="mascota-callout">
     <div class="mascota-callout-inner container">
@@ -98,6 +111,14 @@
         Aquí encontrarás las pizzas más deliciosas<br class="hide-mobile" /> de Frontera Comalapa. 🍕</p>
         <a href="#menu" class="btn btn-red" style="margin-top:0.75rem;font-size:0.85rem;padding:0.55rem 1.3rem;">¡Ver pizzas!</a>
       </div>
+    </div>
+  </div>
+
+  <!-- ===== BANNER IMAGEN DOMICILIO ===== -->
+  <div class="img-banner-strip">
+    <img src="Imgs/anuncio-envio-a-domicilio.jpeg" alt="Servicio a domicilio Doni's Pizza" />
+    <div class="img-banner-overlay">
+      <p>🛵 <strong>¡Llevamos tu pizza hasta tu puerta!</strong></p>
     </div>
   </div>
 
@@ -118,10 +139,10 @@
 
       <div class="menu-grid" id="menuGrid">
 
-        <!-- PIZZA 1 -->
+        <!-- PIZZA 1 – Pepperoni -->
         <div class="pizza-card" data-name="Pepperoni" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
-            <img src="pizza.png" alt="Pizza Pepperoni" />
+            <img src="Imgs/pizza-peperoni.jpeg" alt="Pizza Pepperoni" />
             <span class="card-badge badge-red">⭐ Popular</span>
           </div>
           <div class="card-body">
@@ -129,15 +150,12 @@
             <p class="card-desc">Generosa capa de pepperoni sobre salsa de tomate y queso mozzarella gratinado.</p>
             <div class="card-footer">
               <span class="card-price">$190</span>
-              <button class="btn btn-red btn-order"
-                onclick="openOrderModal('Pepperoni')">
-                Hacer pedido 🛵
-              </button>
+              <button class="btn btn-red btn-order" onclick="openOrderModal('Pepperoni')">Hacer pedido 🛵</button>
             </div>
           </div>
         </div>
 
-        <!-- PIZZA 2 -->
+        <!-- PIZZA 2 – Mexicana -->
         <div class="pizza-card" data-name="Mexicana" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
             <img src="pizza.png" alt="Pizza Mexicana" />
@@ -148,15 +166,12 @@
             <p class="card-desc">Chorizo, jalapeños, chiles y queso con un toque picante irresistible.</p>
             <div class="card-footer">
               <span class="card-price">$190</span>
-              <button class="btn btn-red btn-order"
-                onclick="openOrderModal('Mexicana')">
-                Hacer pedido 🛵
-              </button>
+              <button class="btn btn-red btn-order" onclick="openOrderModal('Mexicana')">Hacer pedido 🛵</button>
             </div>
           </div>
         </div>
 
-        <!-- PIZZA 3 -->
+        <!-- PIZZA 3 – Ala Diabla -->
         <div class="pizza-card" data-name="Ala Diabla" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
             <img src="pizza.png" alt="Pizza Ala Diabla" />
@@ -167,15 +182,12 @@
             <p class="card-desc">Explosión de sabor picante con chiles, salsa especial y queso mozzarella fundido.</p>
             <div class="card-footer">
               <span class="card-price">$190</span>
-              <button class="btn btn-red btn-order"
-                onclick="openOrderModal('Ala Diabla')">
-                Hacer pedido 🛵
-              </button>
+              <button class="btn btn-red btn-order" onclick="openOrderModal('Ala Diabla')">Hacer pedido 🛵</button>
             </div>
           </div>
         </div>
 
-        <!-- PIZZA 4 -->
+        <!-- PIZZA 4 – Choriqueso -->
         <div class="pizza-card" data-name="Choriqueso" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
             <img src="pizza.png" alt="Pizza Choriqueso" />
@@ -186,36 +198,30 @@
             <p class="card-desc">Chorizo jugoso con doble queso mozzarella y salsa de la casa. ¡Irresistible!</p>
             <div class="card-footer">
               <span class="card-price">$190</span>
-              <button class="btn btn-red btn-order"
-                onclick="openOrderModal('Choriqueso')">
-                Hacer pedido 🛵
-              </button>
+              <button class="btn btn-red btn-order" onclick="openOrderModal('Choriqueso')">Hacer pedido 🛵</button>
             </div>
           </div>
         </div>
 
-        <!-- PIZZA 5 -->
+        <!-- PIZZA 5 – Hawaiana -->
         <div class="pizza-card" data-name="Hawaiana" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
-            <img src="pizza.png" alt="Pizza Hawaiana" />
+            <img src="Imgs/pizza-hawaiana.jpeg" alt="Pizza Hawaiana" />
           </div>
           <div class="card-body">
             <h3 class="card-title">Pizza Hawaiana</h3>
             <p class="card-desc">La perfecta combinación de jamón y piña sobre salsa de tomate y queso fundido.</p>
             <div class="card-footer">
               <span class="card-price">$190</span>
-              <button class="btn btn-red btn-order"
-                onclick="openOrderModal('Hawaiana')">
-                Hacer pedido 🛵
-              </button>
+              <button class="btn btn-red btn-order" onclick="openOrderModal('Hawaiana')">Hacer pedido 🛵</button>
             </div>
           </div>
         </div>
 
-        <!-- PIZZA 6 -->
+        <!-- PIZZA 6 – Champiñones -->
         <div class="pizza-card" data-name="Champiñones" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
-            <img src="pizza.png" alt="Pizza Champiñones" />
+            <img src="Imgs/pizza-champiñones.jpeg" alt="Pizza Champiñones" />
             <span class="card-badge badge-blue">🍄 Vegetariana</span>
           </div>
           <div class="card-body">
@@ -223,19 +229,109 @@
             <p class="card-desc">Champiñones frescos, queso mozzarella y salsa de tomate. Suave y deliciosa.</p>
             <div class="card-footer">
               <span class="card-price">$190</span>
-              <button class="btn btn-red btn-order"
-                onclick="openOrderModal('Champiñones')">
-                Hacer pedido 🛵
-              </button>
+              <button class="btn btn-red btn-order" onclick="openOrderModal('Champiñones')">Hacer pedido 🛵</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 7 – Pepperoni Carne Molida (especial, solo 12 reb) -->
+        <div class="pizza-card pizza-card--special" data-name="Pepperoni Carne Molida" data-price-12="230" data-price-24="0">
+          <div class="card-img-wrap">
+            <img src="Imgs/pizza-peperoni-extra-queso.jpeg" alt="Pizza Pepperoni Carne Molida" />
+            <span class="card-badge badge-gold">⚡ Especial</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Pepperoni + Carne Molida</h3>
+            <p class="card-desc">Nuestra pizza especial de pepperoni con carne molida jugosa. Solo disponible en 12 rebanadas.</p>
+            <div class="card-footer">
+              <span class="card-price">$230 <small class="only12">(solo 12 reb.)</small></span>
+              <button class="btn btn-red btn-order" onclick="openOrderModal('Pepperoni Carne Molida')">Hacer pedido 🛵</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 8 – Doritos Nachos (Próximamente) -->
+        <div class="pizza-card pizza-card--coming" data-name="Doritos Nachos">
+          <div class="card-img-wrap">
+            <img src="pizza.png" alt="Pizza Doritos Nachos" />
+            <span class="card-badge badge-gray">🔜 Próximamente</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Doritos Nachos</h3>
+            <p class="card-desc">Una explosión de sabor con Doritos Nachos. ¡Muy pronto disponible!</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-outline btn-order" disabled>Próximamente…</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 9 – Mitad y Mitad -->
+        <div class="pizza-card pizza-card--halfhalf" data-name="Mitad y Mitad">
+          <div class="card-img-wrap">
+            <img src="Imgs/pizza-24-rebanadas.jpeg" alt="Pizza Mitad y Mitad" />
+            <span class="card-badge badge-blue">🍕🍕 Combo</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Mitad y Mitad</h3>
+            <p class="card-desc">Elige dos sabores diferentes en una sola pizza. ¡El precio base se mantiene!</p>
+            <div class="card-footer">
+              <span class="card-price">Desde $190</span>
+              <button class="btn btn-red btn-order" onclick="openHalfHalfModal()">Hacer pedido 🛵</button>
             </div>
           </div>
         </div>
 
       </div><!-- /menu-grid -->
 
+      <!-- ===== SECCIÓN REFRESCOS ===== -->
+      <div class="section-header" style="margin-top:3.5rem;">
+        <span class="section-label">Para acompañar</span>
+        <h2 class="section-title">Refrescos</h2>
+      </div>
+      <div class="drinks-grid">
+
+        <div class="drink-card">
+          <span class="drink-icon">🥤</span>
+          <div class="drink-info">
+            <h4>Refresco 2 Litros</h4>
+            <p>7up · Pepsi · Manzanita · Fanta naranja</p>
+          </div>
+          <div class="drink-actions">
+            <span class="drink-price">$40</span>
+            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco 2L', 40)">+ Carrito</button>
+          </div>
+        </div>
+
+        <div class="drink-card">
+          <span class="drink-icon">🫙</span>
+          <div class="drink-info">
+            <h4>Refresco de Vidrio</h4>
+            <p>7up · Pepsi · Manzanita · Fanta naranja</p>
+          </div>
+          <div class="drink-actions">
+            <span class="drink-price">$30</span>
+            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco vidrio', 30)">+ Carrito</button>
+          </div>
+        </div>
+
+        <div class="drink-card">
+          <span class="drink-icon">🍶</span>
+          <div class="drink-info">
+            <h4>Refresco 600 ml</h4>
+            <p>7up · Pepsi · Manzanita · Fanta naranja</p>
+          </div>
+          <div class="drink-actions">
+            <span class="drink-price">$25</span>
+            <button class="btn btn-blue btn-sm" onclick="addDrinkToCart('Refresco 600ml', 25)">+ Carrito</button>
+          </div>
+        </div>
+
+      </div><!-- /drinks-grid -->
+
       <!-- NOTE -->
       <p class="menu-note">
-        * Precios en pesos mexicanos. Puede haber variaciones. Envío a domicilio <strong>+$15</strong> en todo Frontera Comalapa.
+        * Precios en pesos mexicanos. Puede haber variaciones. Domicilio: Centro/barrios <strong>+$15</strong> · Zonas lejanas (Anonal, La Lima…) <strong>+$25</strong>.
       </p>
     </div>
   </section>
@@ -244,10 +340,10 @@
   <section class="about-section" id="nosotros">
     <div class="container about-grid">
       <div class="about-img-wrap">
-        <img src="donis.png" alt="Doni's Pizza chef" class="about-img" />
+        <img src="Imgs/pizza-sacada-del-horno.png" alt="Pizza Doni's Pizza" class="about-img" />
         <div class="about-badge">
-          <span class="badge-num">+1</span>
-          <span class="badge-label">año<br/>de sabor</span>
+          <span class="badge-num">8</span>
+          <span class="badge-label">meses<br/>de sabor</span>
         </div>
       </div>
       <div class="about-text">
@@ -269,12 +365,12 @@
             <span class="stat-label">Ingredientes frescos</span>
           </div>
           <div class="stat">
-            <span class="stat-num" style="color: var(--blue);">6+</span>
+            <span class="stat-num" style="color: var(--blue);">8+</span>
             <span class="stat-label">Sabores disponibles</span>
           </div>
           <div class="stat">
             <span class="stat-num" style="color: var(--red);">⭐5</span>
-            <span class="stat-label">Calificación clientes</span>
+            <span class="stat-label">Calificación</span>
           </div>
         </div>
         <a href="#menu" class="btn btn-red" style="margin-top:0.5rem;">Ver menú completo</a>
@@ -300,7 +396,7 @@
         <div class="contact-card">
           <span class="contact-icon">🕐</span>
           <h4>Horario</h4>
-          <p>Lunes a Domingo<br /><strong>12:00 pm – 10:00 pm</strong></p>
+          <p>Lun – Mié: <strong>12:00 pm – 9:30 pm</strong><br/>Jue – Sáb: <strong>9:30 am – 9:30 pm</strong><br/>Domingo: <strong>12:00 pm – 9:00 pm</strong></p>
         </div>
 
         <div class="contact-card">
@@ -316,7 +412,7 @@
         <div class="contact-card">
           <span class="contact-icon">🛵</span>
           <h4>Domicilio</h4>
-          <p>Servicio a domicilio en todo Frontera Comalapa por solo <strong style="color:var(--red);">$15</strong>.</p>
+          <p>🏠 Centro y barrios cercanos: <strong style="color:var(--red);">$15</strong><br/>🛵 Anonal, La Lima y zonas lejanas: <strong style="color:var(--red);">$25</strong></p>
         </div>
 
       </div>
@@ -345,22 +441,46 @@
 
       <div class="modal-body">
 
+        <!-- Modo Normal / Mitad y Mitad -->
+        <div class="mode-tabs">
+          <button class="mode-tab active" id="modeNormal" onclick="setModalMode('normal')">🍕 Normal</button>
+          <button class="mode-tab" id="modeHalf"   onclick="setModalMode('halfhalf')">🍕🍕 Mitad y Mitad</button>
+        </div>
+
+        <!-- Selector Mitad y Mitad -->
+        <div id="halfHalfSection" style="display:none;margin-top:1rem;">
+          <label class="modal-label">Primera mitad</label>
+          <select id="halfSelect1" class="modal-input" onchange="updateModalSubtotal()">
+          </select>
+          <label class="modal-label" style="margin-top:0.75rem;">Segunda mitad</label>
+          <select id="halfSelect2" class="modal-input" onchange="updateModalSubtotal()">
+          </select>
+        </div>
+
         <!-- Tamaño -->
-        <label class="modal-label">Tamaño de pizza</label>
+        <label class="modal-label" style="margin-top:1.25rem;">Tamaño de pizza</label>
         <div class="modal-size-group">
           <label class="radio-option">
             <input type="radio" name="modalSize" value="12" id="radio12" checked onchange="updateModalSubtotal()" />
             <span class="radio-custom"></span>
-            <span class="radio-text">12 Rebanadas – <strong id="modalPrice12"></strong></span>
+            <span class="radio-text">12 Rebanadas – <strong id="modalPrice12">$190</strong></span>
           </label>
           <label class="radio-option">
             <input type="radio" name="modalSize" value="24" id="radio24" onchange="updateModalSubtotal()" />
             <span class="radio-custom"></span>
-            <span class="radio-text">24 Rebanadas – <strong id="modalPrice24"></strong></span>
+            <span class="radio-text">24 Rebanadas – <strong id="modalPrice24">$350</strong></span>
           </label>
         </div>
 
-        <!-- Ingredientes extra -->
+        <!-- Promo Martes (se muestra solo si es martes + tamaño 24) -->
+        <div id="promoMartesModal" class="promo-martes-chip" style="display:none;">
+          <label>
+            <input type="checkbox" id="promoMartesCheck" onchange="updateModalSubtotal()" />
+            🎉 <strong>Promo Martes:</strong> Agrega Refresco 2L por solo <strong>+$10</strong>
+          </label>
+        </div>
+
+        <!-- Ingredientes extra con precio -->
         <label class="modal-label" style="margin-top:1.25rem;">
           Ingredientes extra
           <span class="modal-label-hint">(opcional · puedes elegir varios)</span>
@@ -384,12 +504,8 @@
       </div>
 
       <div class="modal-footer">
-        <button class="btn btn-red btn-full" onclick="addToCart()">
-          🛒 Agregar al carrito
-        </button>
-        <button class="btn btn-outline btn-full" onclick="closeOrderModal()" style="margin-top:0.5rem;">
-          Cancelar
-        </button>
+        <button class="btn btn-red btn-full" onclick="addToCart()">🛒 Agregar al carrito</button>
+        <button class="btn btn-outline btn-full" onclick="closeOrderModal()" style="margin-top:0.5rem;">Cancelar</button>
       </div>
     </div>
   </div>
@@ -413,9 +529,14 @@
         <label class="modal-label" style="margin-top:1.5rem;">Tipo de entrega</label>
         <div class="modal-size-group">
           <label class="radio-option">
-            <input type="radio" name="cartDelivery" value="domicilio" id="cartRadioDom" checked onchange="updateCartTotal()" />
+            <input type="radio" name="cartDelivery" value="local" id="cartRadioLocal" checked onchange="updateCartTotal()" />
             <span class="radio-custom"></span>
-            <span class="radio-text">🛵 Envío a domicilio (+$15)</span>
+            <span class="radio-text">🛵 Domicilio – Centro/barrios cercanos (+$15)</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="cartDelivery" value="remote" id="cartRadioRemote" onchange="updateCartTotal()" />
+            <span class="radio-custom"></span>
+            <span class="radio-text">🛵 Domicilio – Anonal, La Lima... (+$25)</span>
           </label>
           <label class="radio-option">
             <input type="radio" name="cartDelivery" value="recoger" id="cartRadioRecoger" onchange="updateCartTotal()" />
@@ -473,6 +594,6 @@
     </svg>
   </a>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

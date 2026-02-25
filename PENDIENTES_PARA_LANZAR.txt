@@ -1,0 +1,121 @@
+================================================================
+  DONI'S PIZZA – LO QUE FALTA PARA LANZAR LA PÁGINA
+================================================================
+
+La página ya funciona, pero estos puntos harán que se vea
+100% profesional y con información real del negocio.
+
+----------------------------------------------------------------
+ 1. FOTOS DE LAS PIZZAS  ← LA MÁS IMPORTANTE
+----------------------------------------------------------------
+Actualmente las 6 tarjetas del menú usan la misma imagen
+genérica (pizza.png). Necesito una foto DIFERENTE para cada
+sabor, así la gente sabe exactamente qué está pidiendo.
+
+  Fotos que necesito (nombre sugerido del archivo):
+  ┌──────────────────┬────────────────────────┐
+  │ Pizza            │ Nombre del archivo     │
+  ├──────────────────┼────────────────────────┤
+  │ Pepperoni        │ pizza-pepperoni.jpg    │
+  │ Mexicana         │ pizza-mexicana.jpg     │
+  │ Ala Diabla       │ pizza-diabla.jpg       │
+  │ Choriqueso       │ pizza-choriqueso.jpg   │
+  │ Hawaiana         │ pizza-hawaiana.jpg     │
+  │ Champiñones      │ pizza-champinones.jpg  │
+  └──────────────────┴────────────────────────┘
+
+  → Pueden ser fotos tomadas con el cel, mientras se vean bien
+    iluminadas y enfocadas. Fondo neutro o de madera ideal.
+  → Solo ponlas en la carpeta del proyecto y dime los nombres
+    exactos para que yo las enlace.
+
+----------------------------------------------------------------
+ 2. HORARIO REAL
+----------------------------------------------------------------
+La página dice actualmente:
+  "Lunes a Domingo  12:00 pm – 10:00 pm"
+
+  ¿Es correcto ese horario?
+  ¿Hay algún día que cierren o tengan horario diferente?
+
+----------------------------------------------------------------
+ 3. HISTORIA / TEXTO "NOSOTROS"  ← OPCIONAL PERO RECOMENDADO
+----------------------------------------------------------------
+El texto sobre la pizzería es genérico. Si quieres personalizarlo
+con la historia real (cuándo abrieron, quién la fundó, qué los
+hace especiales) queda mucho más auténtico y genera más confianza.
+
+  Cuéntame con tus palabras y yo lo redacto bonito.
+
+----------------------------------------------------------------
+ 4. AÑO(S) DE EXPERIENCIA
+----------------------------------------------------------------
+El badge en la sección "Nosotros" dice "+1 año de sabor".
+  ¿Es correcto? ¿Cuánto tiempo lleva abierta Doni's Pizza?
+
+----------------------------------------------------------------
+ 5. REDES SOCIALES  ← RECOMENDADO
+----------------------------------------------------------------
+La página no tiene links a Facebook ni Instagram.
+Si tienen perfiles activos, puedo agregarlos al footer y
+en la sección de contacto.
+
+  ¿Tienen?
+  → Facebook:  (URL o nombre del perfil)
+  → Instagram: (URL o nombre del perfil)
+  → TikTok:    (URL o nombre del perfil)
+
+----------------------------------------------------------------
+ 6. FOTO DEL LOCAL (sección Nosotros)  ← OPCIONAL
+----------------------------------------------------------------
+Actualmente la sección "Nosotros" muestra la imagen de la
+mascota. Una foto real del local o del equipo trabajando
+quedaría mucho mejor para generar confianza.
+
+  → Puede ser una foto del exterior, del horno, de las pizzas
+    recién hechas, o del equipo.
+
+----------------------------------------------------------------
+ 7. GOOGLE MAPS  ← RECOMENDADO
+----------------------------------------------------------------
+Puedo agregar un mapa embebido de Google Maps en la sección
+de contacto para que los clientes puedan ubicarlos fácilmente.
+
+  Para esto necesito que me confirmen la dirección exacta
+  (o me manden el link de Google Maps del negocio).
+
+  Actualmente dice: "Central de Abastos, a un lado de Coppel,
+  Frontera Comalapa, Chiapas"
+
+  ¿Es correcta esa dirección?
+
+----------------------------------------------------------------
+ 8. FAVICON  ← DETALLE VISUAL
+----------------------------------------------------------------
+La pestaña del navegador muestra un ícono genérico.
+Puedo usar el logo.jpeg como favicon para que se vea como
+negocio profesional.
+  → No necesito nada de tu parte, lo agrego yo solo.
+
+================================================================
+  RESUMEN RÁPIDO – POR PRIORIDAD
+================================================================
+
+  🔴 URGENTE (sin esto se ve incompleto):
+     - Fotos individuales de cada pizza
+
+  🟡 IMPORTANTE (info que debe ser correcta):
+     - Confirmar horario
+     - Confirmar años de experiencia
+     - Confirmar dirección
+
+  🟢 RECOMENDADO (queda mucho más profesional):
+     - Redes sociales
+     - Texto personalizado de "Nosotros"
+     - Google Maps
+     - Foto del local
+
+  ⚪ DETALLE FINAL:
+     - Favicon (lo hago yo sin que me mandes nada)
+
+================================================================
