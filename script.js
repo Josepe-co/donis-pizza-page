@@ -160,13 +160,22 @@ function openOrderModal(pizzaName) {
 
 /* ---- Poblar selects de mitad y mitad ---------------------- */
 function populateHalfSelects() {
-  ["halfSelect1", "halfSelect2"].forEach((id, idx) => {
+  ["halfSelect1", "halfSelect2", "halfSelect3", "halfSelect4"].forEach((id, idx) => {
     const sel = document.getElementById(id);
     if (!sel) return;
     sel.innerHTML = REGULAR_PIZZAS.map((name, i) =>
       `<option value="${name}" ${i === idx ? "selected" : ""}>${name}</option>`
     ).join("");
   });
+}
+
+/* ---- Mostrar/ocultar selects 3 y 4 según tamaño ----------- */
+function updateHalfSelectsVisibility() {
+  if (modalMode !== "halfhalf") return;
+  const sizeEl = document.querySelector('input[name="modalSize"]:checked');
+  const is24   = sizeEl?.value === "24";
+  const row34  = document.getElementById("halfRow34");
+  if (row34) row34.style.display = is24 ? "block" : "none";
 }
 
 /* ---- Cambiar modo normal / mitad y mitad ------------------ */
@@ -178,6 +187,7 @@ function setModalMode(mode) {
   if (hhSection) hhSection.style.display = mode === "halfhalf" ? "block" : "none";
   document.getElementById("modalPizzaName").textContent =
     mode === "halfhalf" ? "Pizza Mitad y Mitad" : `Pizza ${currentPizza}`;
+  updateHalfSelectsVisibility();
   updateModalSubtotal();
 }
 
@@ -206,12 +216,8 @@ function getSelectedToppings() {
 }
 
 /* ---- Helper: calcular costo de toppings ------------------- */
-// En pizzas de 24 reb los primeros 4 ingredientes elegidos están incluidos.
-// Del 5° en adelante se cobra el precio indicado.
-function calcToppingsCost(toppings, size) {
-  if (size !== "24") return toppings.reduce((s, t) => s + t.price, 0);
-  // Primeros 4 incluidos, el resto se cobra
-  return toppings.slice(4).reduce((s, t) => s + t.price, 0);
+function calcToppingsCost(toppings) {
+  return toppings.reduce((s, t) => s + t.price, 0);
 }
 
 /* ---- Subtotal del modal ----------------------------------- */
@@ -232,11 +238,10 @@ function updateModalSubtotal() {
   }
 
   const toppings      = getSelectedToppings();
-  const toppingsTotal = calcToppingsCost(toppings, size);
+  const toppingsTotal = calcToppingsCost(toppings);
 
-  // Nota informativa para cualquier pizza de 24 reb
-  const note = document.getElementById("halfHalfToppingsNote");
-  if (note) note.style.display = size === "24" ? "block" : "none";
+  // Actualizar visibilidad de selects 3 y 4 al cambiar tamaño
+  updateHalfSelectsVisibility();
 
   // Promo martes: mostrar solo si es martes y tamaño 24
   const isTuesday  = new Date().getDay() === 2;
@@ -274,7 +279,7 @@ function addToCart() {
   const sizeEl   = document.querySelector('input[name="modalSize"]:checked');
   const size     = sizeEl ? sizeEl.value : "12";
   const toppings = getSelectedToppings();
-  const topCost  = calcToppingsCost(toppings, size);
+  const topCost  = calcToppingsCost(toppings);
   const topLabel = toppings.map(t => t.label);
 
   let name, price, key;
@@ -284,7 +289,15 @@ function addToCart() {
     const h2    = document.getElementById("halfSelect2")?.value || REGULAR_PIZZAS[1];
     const d1    = pizzaData[h1];
     const baseP = d1 ? (size === "12" ? d1.price12 : d1.price24) : 190;
-    name  = `Mitad ${h1} / ${h2}`;
+    let partsLabel;
+    if (size === "24") {
+      const h3 = document.getElementById("halfSelect3")?.value || REGULAR_PIZZAS[2];
+      const h4 = document.getElementById("halfSelect4")?.value || REGULAR_PIZZAS[3];
+      partsLabel = `${h1} / ${h2} / ${h3} / ${h4}`;
+    } else {
+      partsLabel = `${h1} / ${h2}`;
+    }
+    name  = `Mitad y Mitad (${partsLabel})`;
     price = baseP + topCost;
     key   = `${name}__${size}__${[...topLabel].sort().join(",")}`;
   } else {
