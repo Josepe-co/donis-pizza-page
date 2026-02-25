@@ -205,16 +205,13 @@ function getSelectedToppings() {
     .map(c => ({ label: c.dataset.label, price: parseInt(c.dataset.price) }));
 }
 
-/* ---- Helper: calcular costo de toppings con regla gratis ---------- */
-// halfhalf24: primeros 4 ingredientes (sin contar Extra queso) son GRATIS
-function calcToppingsCost(toppings, isHalfHalf24) {
-  if (!isHalfHalf24) return toppings.reduce((s, t) => s + t.price, 0);
-  // Extra queso siempre se cobra
-  const quesoExtra  = toppings.filter(t => t.label === "Extra queso");
-  const regulares   = toppings.filter(t => t.label !== "Extra queso");
-  const paidReg     = regulares.slice(4); // los primeros 4 son gratis
-  return quesoExtra.reduce((s, t) => s + t.price, 0) +
-         paidReg.reduce((s, t) => s + t.price, 0);
+/* ---- Helper: calcular costo de toppings ------------------- */
+// En pizzas de 24 reb los primeros 4 ingredientes elegidos están incluidos.
+// Del 5° en adelante se cobra el precio indicado.
+function calcToppingsCost(toppings, size) {
+  if (size !== "24") return toppings.reduce((s, t) => s + t.price, 0);
+  // Primeros 4 incluidos, el resto se cobra
+  return toppings.slice(4).reduce((s, t) => s + t.price, 0);
 }
 
 /* ---- Subtotal del modal ----------------------------------- */
@@ -235,12 +232,11 @@ function updateModalSubtotal() {
   }
 
   const toppings      = getSelectedToppings();
-  const isHalfHalf24  = (modalMode === "halfhalf" && size === "24");
-  const toppingsTotal = calcToppingsCost(toppings, isHalfHalf24);
+  const toppingsTotal = calcToppingsCost(toppings, size);
 
-  // Nota informativa para mitad y mitad 24 reb
+  // Nota informativa para cualquier pizza de 24 reb
   const note = document.getElementById("halfHalfToppingsNote");
-  if (note) note.style.display = isHalfHalf24 ? "block" : "none";
+  if (note) note.style.display = size === "24" ? "block" : "none";
 
   // Promo martes: mostrar solo si es martes y tamaño 24
   const isTuesday  = new Date().getDay() === 2;
@@ -278,8 +274,7 @@ function addToCart() {
   const sizeEl   = document.querySelector('input[name="modalSize"]:checked');
   const size     = sizeEl ? sizeEl.value : "12";
   const toppings = getSelectedToppings();
-  const isHalfHalf24 = (modalMode === "halfhalf" && size === "24");
-  const topCost  = calcToppingsCost(toppings, isHalfHalf24);
+  const topCost  = calcToppingsCost(toppings, size);
   const topLabel = toppings.map(t => t.label);
 
   let name, price, key;
