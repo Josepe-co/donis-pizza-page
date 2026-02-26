@@ -614,4 +614,18 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCardPrices();
   updateCartBadge();
   initMartesPromo();
+
+  // Scroll sin hash en la URL (#inicio, #menu, etc.)
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+      history.replaceState(null, "", location.pathname);
+    });
+  });
+
+  // Limpiar hash si la página cargó con uno
+  if (location.hash) history.replaceState(null, "", location.pathname);
 });
