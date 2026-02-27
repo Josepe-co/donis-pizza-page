@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doni's Pizza – Frontera Comalapa</title>
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -150,7 +150,7 @@
         <!-- PIZZA 2 – Mexicana -->
         <div class="pizza-card" data-name="Mexicana" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
-            <img src="imgs/pizza-mexicana-hawaiana.jpeg" alt="Pizza Mexicana" />
+            <img src="imgs/pizza-mexicana.jpeg" alt="Pizza Mexicana" />
             <span class="card-badge badge-blue">🌶️ Picante</span>
           </div>
           <div class="card-body">
@@ -182,7 +182,7 @@
         <!-- PIZZA 4 – Choriqueso -->
         <div class="pizza-card" data-name="Choriqueso" data-price-12="190" data-price-24="350">
           <div class="card-img-wrap">
-            <img src="pizza.png" alt="Pizza Choriqueso" />
+            <img src="imgs/pizza-choriqueso.jpeg" alt="Pizza Choriqueso" />
             <span class="card-badge badge-blue">🧀 Especial</span>
           </div>
           <div class="card-body">
@@ -229,7 +229,7 @@
         <!-- PIZZA 7 – Pepperoni Carne Molida (especial, solo 12 reb) -->
         <div class="pizza-card pizza-card--special" data-name="Pepperoni Carne Molida" data-price-12="230" data-price-24="0">
           <div class="card-img-wrap">
-            <img src="imgs/pizza-peperoni-extra-queso.jpeg" alt="Pizza Pepperoni Carne Molida" />
+            <img src="imgs/pizza-peperoni-carne-molida.png" alt="Pizza Pepperoni Carne Molida" />
             <span class="card-badge badge-gold">⚡ Especial</span>
           </div>
           <div class="card-body">
@@ -242,23 +242,7 @@
           </div>
         </div>
 
-        <!-- PIZZA 8 – Doritos Nachos (Próximamente) -->
-        <div class="pizza-card pizza-card--coming" data-name="Doritos Nachos">
-          <div class="card-img-wrap">
-            <div class="card-img-unknown">?</div>
-            <span class="card-badge badge-gray">🔜 Próximamente</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Pizza Doritos Nachos</h3>
-            <p class="card-desc">Una explosión de sabor con Doritos Nachos. ¡Muy pronto disponible!</p>
-            <div class="card-footer">
-              <span class="card-price">$190</span>
-              <button class="btn btn-outline btn-order" disabled>Próximamente…</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- PIZZA 9 – Mitad y Mitad -->
+        <!-- PIZZA 8 – Mitad y Mitad -->
         <div class="pizza-card pizza-card--halfhalf" data-name="Mitad y Mitad">
           <div class="card-img-wrap">
             <img src="imgs/pizza-24-rebanadas.jpeg" alt="Pizza Mitad y Mitad" />
@@ -270,6 +254,22 @@
             <div class="card-footer">
               <span class="card-price">Desde $190</span>
               <button class="btn btn-red btn-order" onclick="openHalfHalfModal()">Hacer pedido 🛵</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA 9 – Doritos Nachos (Próximamente) -->
+        <div class="pizza-card pizza-card--coming" data-name="Doritos Nachos">
+          <div class="card-img-wrap">
+            <div class="card-img-unknown">?</div>
+            <span class="card-badge badge-gray">🔜 Próximamente</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pizza Doritos Nachos</h3>
+            <p class="card-desc">Una explosión de sabor con Doritos Nachos. ¡Muy pronto disponible!</p>
+            <div class="card-footer">
+              <span class="card-price">$190</span>
+              <button class="btn btn-outline btn-order" disabled>Próximamente…</button>
             </div>
           </div>
         </div>
@@ -620,6 +620,6 @@
     </svg>
   </a>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
