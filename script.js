@@ -4,8 +4,8 @@
 
 /* ---- CONFIGURACIÓN ---------------------------------------- */
 const WA_NUMBER          = "529631403622";
-const DELIVERY_FEE_LOCAL  = 15;   // dentro de Comalapa
-const DELIVERY_FEE_REMOTE = 25;   // fuera de Comalapa
+const DELIVERY_FEE_LOCAL  = 20;   // dentro de Comalapa
+const DELIVERY_FEE_REMOTE = 30;   // fuera de Comalapa
 
 /* ---- DATOS DE PIZZAS -------------------------------------- */
 const pizzaData = {
